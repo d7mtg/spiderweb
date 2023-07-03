@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1920, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <title>SpiderWeb</title>
+
+
+<style>
+
+
+    body, html {
+        height: 100%;
+        margin: -5px 50px -10px 50px;
+        font-family: 'Onest', sans-serif;
+        background-color: #f8fafc;
+
+        color: #334155;
+        text-align: center;
+       
+    }
+
+    ::selection{
+        background-color: #cbd5e1;
+    }
+    body{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        /* border: 2px solid #e2e8f0; */
+        
+    }
+    a{
+        color: #0ea5e9;
+        text-decoration: none;
+        padding: 5px;
+        border-radius: 5px;
+        line-height: 2;
+        transition: background-color 0.2s ease-in-out;
+
+    }
+
+    a:hover{
+        background-color: #e0f2fe;
+        
+    }
+ 
+
+    h2{
+        font-size: 6rem;
+        font-weight: 500;
+        margin: 0;
+        letter-spacing: -0.05em;
+        
+    }
+   .drop {
+    position: relative;
+    top: -50px;
+    animation: drop 1s cubic-bezier(0.1, -0.4, .8, .8) both;
+}
+
+@keyframes drop {
+    0% {
+        top: -1000px;
+    }
+    80% {
+        top: 0px;
+    }
+    95% {
+        top: -5px;
+    }
+    100% {
+        top: 0px;
+    }
+}
+@keyframes skeletonLoader {
+    0% {
+        background-position: -800px;
+    }
+    100% {
+        background-position: calc(800px + 100%);
+    }
+}
+    /* .hidden{
+        font-size: .8rem;
+        color: #cbd5e1;
+        bottom: 0px;
+        position: absolute;
+        display: none;
+        opacity: 1;
+       
+        animation: moveup 6s  linear both;
+    } */
+    /* @keyframes moveup {
+    0% {
+        transform: translateY(100px);
+        opacity: 1;
+    }
+    10% {
+        transform: translateY(0px);
+        opacity: 1;
+
+    }
+    90% {
+        transform: translateY(0px);
+        opacity: 1;
+
+    }
+    95% {
+        opacity: 0;
+    }
+    100% {
+        display: none;
+        opacity: 0;
+    }
+} */
+
+
+</style>
+
+
+</head>
+<body>
+
+    <p>we are</p>
+    <h2>&nbsp;</h2>
+    <p>and we craft high-qality <br><a href="/web">websites</a> and <a href="/web">apps</a> that users love.</p>
+    <!-- <p class="hidden">Nothing to see here... Yet</p> -->
+   <br><br> 
+<p><a href="mailto:hello@usecase.net">let's chat?</a></p>
+</body>
+<script>
+
+
+
+        window.onload = type();
+
+        function type() {
+    var text = "SpiderWeb";
+    var htmlElement = "<span class='drop'>.</span>";
+    var i = 0;
+    var speed = 50;
+
+    function typeWriter() {
+        if (i < text.length) {
+            document.querySelector("h2").innerHTML += text.charAt(i);
+            i++;
+            setTimeout(typeWriter, speed);
+        } else {
+            document.querySelector("h2").innerHTML += htmlElement;
+        }
+    }
+    typeWriter();
+}
+
+
+</script>
+</html>
